@@ -279,14 +279,25 @@ function openTileModal(currentTile) {
   //get the state of the current tile
   const state = getTileState(currentTile);
   console.log(state);
-  // set the checkbox values based on the state of the current tile
-  const form = document.getElementById('attributeForm');
-  form.riparian.checked = state.riparian;
-  form.impassable.checked = state.impassable;
-  form.culturallySignificant.checked = state.culturallySignificant;
-  form.logable.checked = state.logable;
-
+  //set the title, description and image of the modal to match the state of the current tile
+  // #tileTitle
+  // #tileDescription
+  // #tileImage
+  document.getElementById('tileTitle').textContent = state.name;
+  document.getElementById('tileDescription').textContent = state.description;
+  document.getElementById('tileImage').src = `game-icons/${state.icon}`;
+  //set the value of the input fields in the modal to match the state of the current tile
+  setModalFormValues(state);
   document.getElementById('tile-modal').style.display = 'block';
+}
+
+function setModalFormValues(state) {
+    // set the checkbox values based on the state of the current tile
+    const form = document.getElementById('attributeForm');
+    form.riparian.checked = state.riparian;
+    form.impassable.checked = state.impassable;
+    form.culturallySignificant.checked = state.culturallySignificant;
+    form.logable.checked = state.logable;
 }
 
 //return the state of a tile

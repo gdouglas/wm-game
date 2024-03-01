@@ -9,11 +9,11 @@
 </head>
 
 <body>
+  <h1 id="gameTitle">Woodlot Manager</h1>
   <section id="game-container">
-
     <div id="grid-container"></div>
     <div id="overlay-options">
-      <button id="overlay-toggle" onclick="toggleOverlay()">Hide All Overlays</button>
+      <h2>Show Tile Overlays</h2>
       <form id="overlay-options">
         <input type="checkbox" id="overlay-riparian" name="overlay-riparian">
         <label for="overlay-riparian">Riparian</label><br>
@@ -24,22 +24,34 @@
         <input type="checkbox" id="overlay-logable" name="overlay-logable">
         <label for="overlay-logable">Logable</label>
       </form>
+      <button id="overlay-toggle" onclick="toggleOverlay()">Hide All Overlays</button>      
     </div>
   </section>
   <!-- Add this inside the <body>, below the #options div -->
   <div id="tile-modal" class="tile-modal">
     <div class="tile-modal-content">
       <span class="tile-modal-close-button">&times;</span>
+      <h2 id="tileTitle">Tile Title</h2>
+      <p id="tileDescription">Tile Description</p>
+      <img src="" alt="Tile Image" id="tileImage">
       <h2>Select Tile Attributes</h2>
       <form id="attributeForm">
-        <input type="checkbox" id="logable" name="logable">
-        <label for="logable">Logable</label><br>
-        <input type="checkbox" id="riparian" name="riparian">
-        <label for="riparian">Riparian</label><br>
-        <input type="checkbox" id="impassable" name="impassable">
-        <label for="impassable">Impassable Terrain</label><br>
-        <input type="checkbox" id="culturallySignificant" name="culturallySignificant">
-        <label for="culturallySignificant">Culturally Significant</label><br>
+        <span class="modal-option">
+          <input type="checkbox" id="logable" name="logable">
+          <label for="logable">Logable</label>
+        </span>
+        <span class="modal-option">
+          <input type="checkbox" id="riparian" name="riparian">
+          <label for="riparian">Riparian</label>
+        </span>
+        <span class="modal-option">
+          <input type="checkbox" id="impassable" name="impassable">
+          <label for="impassable">Impassable Terrain</label>
+        </span>
+        <span class="modal-option">
+          <input type="checkbox" id="culturallySignificant" name="culturallySignificant">
+          <label for="culturallySignificant">Culturally Significant</label>
+        </span>
         <button type="button" onclick="applyAttributes()">Apply</button>
       </form>
     </div>
