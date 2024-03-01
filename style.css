@@ -1,22 +1,50 @@
+:root {
+  --game-width: 1800px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: whitesmoke;
+}
+
 /* style.css */
 #gameTitle {
   text-align: center;
   font-size: 36px;
   margin-bottom: 20px;
+  margin-top: 2rem;
 }
+
 #game-container {
   display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
+  align-items: start;
+  flex-direction: row;
   justify-content: center;
-  padding: 50px;
+  padding: 5rem;
+  background: snow;
+  padding: 5rem;
+  max-width: var(--game-width);
+  margin: 0 auto;
 }
+
+#overlay-options {
+ #overlay-toggle {
+  display: block;
+  padding: 5px;
+  margin-top: 1rem;
+  margin: 1rem auto 0 auto;
+ }
+}
+
 #grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 5px;
   width: 500px;
-  margin: auto;
+  margin: 0 3rem;
 }
 
 .grid-item {
@@ -83,8 +111,7 @@
 
 .tile-modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
-  /* 15% from the top and centered */
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
@@ -158,23 +185,122 @@
   background: #eee;
   border-radius: 5px;
   margin: 0 auto;
+
   .modal-option {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     flex-wrap: wrap;
+
     label,
     input {
       width: 100%;
       text-align: center;
     }
-  
+
   }
+
   button {
     margin-top: 20px;
-    margin-left:auto;
+    margin-left: auto;
     margin-right: auto;
     width: 80%;
     padding: 5px 10px;
+  }
+}
+
+
+
+
+
+
+
+/* Stakeholders */
+
+#stakeholders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+#stakeholder-section {
+  background: snow;
+  max-width: var(--game-width);
+  margin: 0 auto;
+
+  h2,
+  h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  table {
+    margin-top: 1rem;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    width: 25%;
+    text-align: center;
+  }
+
+  tr td:first-of-type {
+    width: 50%;
+    font-weight: bold;
+    text-align: right;
+  }
+
+  td:nth-child(2) {
+    color: #fff;
+    background: seagreen;
+  }
+
+  td:nth-child(3) {
+    color: #fff;
+    background: coral
+  }
+
+  tr:last-of-type {
+    border-bottom: none;
+  }
+
+  tr {
+    border-bottom: 1px solid #ccc;
+  }
+
+  #stakeholders {
+    display: flex;
+  }
+
+  .stakeholder-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 180px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+}
+
+
+#score {
+  width: 150px;
+  p {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .appoval {
+    padding:0 5px;
+    display: inline-block;
   }
 }

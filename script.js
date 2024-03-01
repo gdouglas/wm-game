@@ -228,6 +228,42 @@ const tileState = {
     logable: true
   }
 };
+
+//create a state object to hold the score for each stakeholder
+const stakeholderState = {
+  stakeholder1: {
+    logging: 1,
+    riparian: 0,
+    culturallySignificant: 0,
+    score: 0
+  },
+  stakeholder2: {
+    logging: 0,
+    riparian: 1,
+    culturallySignificant: 1,
+    score: 0
+  },
+  stakeholder3: {
+    logging: -1,
+    riparian: 1,
+    culturallySignificant: 2,
+    score: 0
+  },
+  stakeholder4: {
+    logging: 1,
+    riparian: 1,
+    culturallySignificant: 1,
+    score: 0
+  },
+  stakeholder5: {
+    logging: -1,
+    riparian: 1,
+    culturallySignificant: 0,
+    score: 0
+  },
+
+
+};
   
 
 // Add to script.js
@@ -278,7 +314,6 @@ function openTileModal(currentTile) {
   tileState.currentTile = currentTile;
   //get the state of the current tile
   const state = getTileState(currentTile);
-  console.log(state);
   //set the title, description and image of the modal to match the state of the current tile
   // #tileTitle
   // #tileDescription
@@ -321,6 +356,7 @@ function applyAttributes() {
       tile.classList.add(attr);
     }
   });
+  calculateStakeholderScores();
   closeTileModal(); // Close the modal after applying attributes
 }
 
@@ -337,6 +373,7 @@ function applyTileState() {
       }
     });
   });
+  calculateStakeholderScores();
 }
 
 function updateTileState(tile, form) {
@@ -362,5 +399,50 @@ function initOverlayControls() {
     item.addEventListener('change', function() {
       document.getElementById('grid-container').classList.toggle(this.name);
     });
+  });
+}
+
+// get a count of all the states in each tile 
+function getTileCounts() {
+  const gridContainer = document.getElementById('grid-container');
+  const tileCounts = {
+    riparian: 0,
+    impassable: 0,
+    culturallySignificant: 0,
+    logable: 0
+  };
+  gridContainer.childNodes.forEach(tile => {
+    const state = getTileState(tile);
+    for (let attr in tileCounts) {
+      if (state[attr]) {
+        tileCounts[attr]++;
+      }
+    }
+  });
+  return tileCounts;
+}
+
+//recursively go through all the stakeholders and create a score for each one
+function calculateStakeholderScores() {
+  const tileCounts = getTileCounts();
+  const stakeholders = Object.keys(stakeholderState);
+  stakeholders.forEach(stakeholder => {
+    //multiple the values in the map against the values in the state object then sum them up
+    stakeholderState[stakeholder].score = stakeholderState[stakeholder].logging * tileCounts.logable + stakeholderState[stakeholder].riparian * tileCounts.riparian + stakeholderState[stakeholder].culturallySignificant * tileCounts.culturallySignificant;
+  });
+  // console.log(score);
+  
+  renderScores();
+}
+
+
+// for each #score-stakeholder-n p element set the value of the contained span.approval to the score of the stakeholder from the stakeholederState object
+function renderScores() {
+  console.log("render scores");
+  const stakeholders = Object.keys(stakeholderState);
+  stakeholders.forEach(stakeholder => {
+    console.log(stakeholder);
+    const score = stakeholderState[stakeholder].score;
+    document.querySelector(`#score-${stakeholder} .approval`).textContent = score;
   });
 }

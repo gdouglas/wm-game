@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grid Game</title>
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
   <h1 id="gameTitle">Woodlot Manager</h1>
   <section id="game-container">
-    <div id="grid-container"></div>
     <div id="overlay-options">
       <h2>Show Tile Overlays</h2>
       <form id="overlay-options">
@@ -24,10 +24,165 @@
         <input type="checkbox" id="overlay-logable" name="overlay-logable">
         <label for="overlay-logable">Logable</label>
       </form>
-      <button id="overlay-toggle" onclick="toggleOverlay()">Hide All Overlays</button>      
+      <button id="overlay-toggle" onclick="toggleOverlay()">Hide All Overlays</button>
+    </div>
+    <div id="grid-container"></div>
+    <div id="score">
+      <h2>Score</h2>
+      <p id="score-stakeholder1"><span class="label">Company</span> <span class="approval">0</span></p>
+      <p id="score-stakeholder2"><span class="label">Community</span> <span class="approval">0</span></p>
+      <p id="score-stakeholder3"><span class="label">First Ntn</span><span class="approval">0</span></p>
+      <p id="score-stakeholder4"><span class="label">Government</span><span class="approval">0</span></p>
+      <p id="score-stakeholder5"><span class="label">NGOs</span><span class="approval">0</span></p>
     </div>
   </section>
-  <!-- Add this inside the <body>, below the #options div -->
+
+  <section id="stakeholder-section">
+    <h2>Stakeholders</h2>
+    <div id="stakeholders">
+      <div id="stakeholder-1" class="stakeholder-card">
+        <h3>Company</h3>
+        <p>The Woodlot Licensee. Responsible for managing the woodlot and generating a profit.</p>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="3">Attitude</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Logging</td>
+              <td>Yes</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Riparian Protection</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Cultural protection</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="stakeholder-2" class="stakeholder-card">
+        <h3>Community, Local</h3>
+        <p>Members of the local community.</p>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="3">Attitude</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Logging</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Riparian Protection</td>
+              <td>Yes</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Cultural protection</td>
+              <td>Yes</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="stakeholder-3" class="stakeholder-card">
+        <h3>First Nations, local</h3>
+        <p>Representatives from local first nations groups.</p>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="3">Attitude</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Logging</td>
+              <td></td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Riparian Protection</td>
+              <td>Yes</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Cultural protection</td>
+              <td>Yes</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="stakeholder-4" class="stakeholder-card">
+        <h3>Government (regulatory)</h3>
+        <p>Regulatory body from higher levels of government.</p>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="3">Attitude</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Logging</td>
+              <td>Yes</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Riparian Protection</td>
+              <td>Yes</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Cultural protection</td>
+              <td>Yes</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="stakeholder-5" class="stakeholder-card">
+        <h3>NGO's</h3>
+        <p>Non-government organizations. Green Peace, Raincoast Conservation Foundation, SPEC</p>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="3">Attitude</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Logging</td>
+              <td></td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Riparian Protection</td>
+              <td>Yes</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Cultural protection</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </div>
+  </section>
+
   <div id="tile-modal" class="tile-modal">
     <div class="tile-modal-content">
       <span class="tile-modal-close-button">&times;</span>
