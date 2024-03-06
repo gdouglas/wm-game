@@ -9,7 +9,7 @@ const tileState = {
     riparian: true,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile1: {
     name: "Tile 2",
@@ -18,7 +18,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile2: {
     name: "Tile 3",
@@ -27,7 +27,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile3: {
     name: "Tile 4",
@@ -36,7 +36,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile4: {
     name: "Tile 5",
@@ -45,7 +45,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile5: {
     name: "Tile 6",
@@ -54,7 +54,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile6: {
     name: "Tile 7",
@@ -63,7 +63,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile7: {
     name: "Tile 8",
@@ -72,7 +72,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile8: {
     name: "Tile 9",
@@ -81,7 +81,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile9: {
     name: "Tile 10",
@@ -90,7 +90,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile10: {
     name: "Tile 11",
@@ -99,7 +99,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile11: {
     name: "Tile 12",
@@ -108,7 +108,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile12: {
     name: "Tile 13",
@@ -117,7 +117,7 @@ const tileState = {
     riparian: true,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile13: {
     name: "Tile 14",
@@ -126,7 +126,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile14: {
     name: "Tile 15",
@@ -135,7 +135,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile15: {
     name: "Tile 16",
@@ -144,7 +144,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile16: {
     name: "Tile 17",
@@ -153,7 +153,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile17: {
     name: "Tile 18",
@@ -162,7 +162,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile18: {
     name: "Tile 19",
@@ -171,7 +171,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile19: {
     name: "Tile 20",
@@ -180,7 +180,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile20: {
     name: "Tile 21",
@@ -189,7 +189,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile21: {
     name: "Tile 22",
@@ -198,7 +198,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile22: {
     name: "Tile 23",
@@ -207,7 +207,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile23: {
     name: "Tile 24",
@@ -216,7 +216,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   },
   tile24: {
     name: "Tile 25",
@@ -225,7 +225,7 @@ const tileState = {
     riparian: false,
     impassable: false,
     culturallySignificant: false,
-    logable: true
+    logable: false
   }
 };
 

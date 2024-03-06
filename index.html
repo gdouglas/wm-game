@@ -42,7 +42,7 @@
     <div id="stakeholders">
       <div id="stakeholder-1" class="stakeholder-card">
         <h3>Company</h3>
-        <p>The Woodlot Licensee. Responsible for managing the woodlot and generating a profit.</p>
+        <p class="stakeholder-description">The Woodlot Licensee. Responsible for managing the woodlot and generating a profit.</p>
         <table>
           <thead>
             <tr>
@@ -52,25 +52,22 @@
           <tbody>
             <tr>
               <td>Economic</td>
-              <td>+++</td>
-              <td></td>
+              <td><span class="positive">+++</span></td>
             </tr>
             <tr>
               <td>Environmental</td>
               <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td>Cultural</td>
-              <td></td>
+              <td>Social</td>
               <td></td>
             </tr>
           </tbody>
         </table>
       </div>
       <div id="stakeholder-2" class="stakeholder-card">
-        <h3>Community, Local</h3>
-        <p>Members of the local community.</p>
+        <h3>Community</h3>
+        <p class="stakeholder-description">Members of the local community.</p>
         <table>
           <thead>
             <tr>
@@ -80,25 +77,22 @@
           <tbody>
             <tr>
               <td>Economic</td>
-              <td></td>
-              <td></td>
+              <td><span class="positive">+</span></td>
             </tr>
             <tr>
               <td>Environmental</td>
-              <td>+</td>
-              <td></td>
+              <td><span class="positive">+</span></td>
             </tr>
             <tr>
-              <td>Cultural</td>
-              <td>+</td>
-              <td></td>
+              <td>Social</td>
+              <td><span class="positive">++</span></td>
             </tr>
           </tbody>
         </table>
       </div>
       <div id="stakeholder-3" class="stakeholder-card">
-        <h3>First Nations, local</h3>
-        <p>Representatives from local first nations groups.</p>
+        <h3>First Nations</h3>
+        <p class="stakeholder-description">Representatives from local first nations groups.</p>
         <table>
           <thead>
             <tr>
@@ -108,25 +102,22 @@
           <tbody>
             <tr>
               <td>Economic</td>
-              <td></td>
-              <td></td>
+              <td><span class="negative">-</span></td>
             </tr>
             <tr>
               <td>Environmental</td>
-              <td>+</td>
-              <td></td>
+              <td><span class="positive">+</span></td>
             </tr>
             <tr>
-              <td>Cultural</td>
-              <td>++</td>
-              <td></td>
+              <td>Social</td>
+              <td><span class="positive">++</span></td>
             </tr>
           </tbody>
         </table>
       </div>
       <div id="stakeholder-4" class="stakeholder-card">
-        <h3>Government (regulatory)</h3>
-        <p>Regulatory body from higher levels of government.</p>
+        <h3>Government & NGO <br><small>(regulatory mandates)</small></h3>
+        <p class="stakeholder-description">Regulatory body from higher levels of government.</p>
         <table>
           <thead>
             <tr>
@@ -136,50 +127,19 @@
           <tbody>
             <tr>
               <td>Economic</td>
-              <td>+</td>
-              <td></td>
+              <td><span class="positive">+</span></td>
             </tr>
             <tr>
               <td>Environmental</td>
-              <td>+</td>
-              <td></td>
+              <td><span class="positive">+</span></td>
             </tr>
             <tr>
-              <td>Cultural</td>
-              <td>+</td>
-              <td></td>
+              <td>Social</td>
+              <td><span class="positive">+</span></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div id="stakeholder-5" class="stakeholder-card">
-        <h3>NGO's</h3>
-        <p>Non-government organizations. Green Peace, Raincoast Conservation Foundation, SPEC</p>
-        <table>
-          <thead>
-            <tr>
-              <th colspan="3">Values</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Economic</td>
-              <td></td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>Environmental</td>
-              <td>++</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Cultural</td>
-              <td>+</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
     </div>
   </section>
 
@@ -189,7 +149,18 @@
       <h2 id="tileTitle">Tile Title</h2>
       <p id="tileDescription">Tile Description</p>
       <img src="" alt="Tile Image" id="tileImage">
-      <h2>Select Tile Attributes</h2>
+      <form id="modal-scenario-form">
+        <h2>Scenario</h2>
+        <div id="scenarioDescription"></div>
+        <input type="radio" id="scenario1" name="scenario" value="scenario1">
+        <label for="scenario1">Scenario 1</label><br>
+        <input type="radio" id="scenario2" name="scenario" value="scenario2">
+        <label for="scenario2">Scenario 2</label><br>
+        <input type="radio" id="scenario3" name="scenario" value="scenario3">
+        <label for="scenario3">Scenario 3</label><br>      
+        <button type="button" onclick="applyScenario()">Apply</button>
+      </form>
+      <h2>Tag for overlay</h2>
       <form id="attributeForm">
         <span class="modal-option">
           <input type="checkbox" id="logable" name="logable">
