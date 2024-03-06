@@ -154,13 +154,31 @@
       <img src="" alt="Tile Image" id="tileImage">
       <form id="modal-scenario-form">
         <h2>Scenario</h2>
-        <div id="scenarioDescription"></div>
-        <input type="radio" id="scenario1" name="scenario" value="scenario1">
-        <label for="scenario1">Scenario 1</label><br>
-        <input type="radio" id="scenario2" name="scenario" value="scenario2">
-        <label for="scenario2">Scenario 2</label><br>
-        <input type="radio" id="scenario3" name="scenario" value="scenario3">
-        <label for="scenario3">Scenario 3</label><br>      
+        <h3 id="scenario-title">scenario-title</h3>
+        <div id="scenario-description"></div>
+        <div class="scenario-options">
+          <div id="option1" class="option-card">
+            <label for="scenario1">
+              <div class="option-title">Scenario 1</div>
+              <div class="option-description">Description of scenario 1</div>
+            </label>
+            <input type="radio" id="scenario1" name="scenario" value="scenario1">
+          </div>
+          <div id="option2" class="option-card">
+            <label for="scenario2">
+              <div class="option-title">Scenario 2</div>
+              <div class="option-description">Description of scenario 2</div>
+            </label>
+            <input type="radio" id="scenario2" name="scenario" value="scenario2">
+          </div>
+          <div id="option3" class="option-card">
+            <label for="scenario3">
+              <div class="option-title">Scenario 3</div>
+              <div class="option-description">Description of scenario 3</div>
+            </label>
+            <input type="radio" id="scenario3" name="scenario" value="scenario3">
+          </div>
+        </div>   
         <button type="button" onclick="applyScenario()">Apply</button>
       </form>
       <h2>Tag for overlay</h2>

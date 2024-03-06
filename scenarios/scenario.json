@@ -1,0 +1,50 @@
+{
+    "scenarios": [
+        {
+            "id": 1,
+            "title": "Mountain Bikers made trails",
+            "description": "A local community group has made trails for mountain biking in this area. The mountain biking trails are well known and are used recreationally by the community.",
+            "tiles": ["tile1", "tile2"],
+            "options": [
+                {
+                    "optionId": 1,
+                    "description": "Reduce the cut to maintain trails",
+                    "result": "Result of option 1"
+                },
+                {
+                    "optionId":2,
+                    "description": "Ignore the trails and continue cutting",
+                    "result": "Result of option 2"
+                },
+                {
+                    "optionId":3,
+                    "description": "Stop cutting and find a new location to cut",
+                    "result": "Result of option 3"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Scenario 2",
+            "description": "Scenario 2 description",
+            "tiles": ["tile3"],
+            "options": [
+                {
+                    "optionId": 1,
+                    "description": "Option 1 description",
+                    "result": "Result of option 1"
+                },
+                {
+                    "optionId":2,
+                    "description": "Option 2 description",
+                    "result": "Result of option 2"
+                },
+                {
+                    "optionId":3,
+                    "description": "Option 3 description",
+                    "result": "Result of option 3"
+                }
+            ]
+        }
+    ]
+}

@@ -265,17 +265,26 @@ const stakeholderState = {
 
 };
   
+//get the data from the scenarios/scenario.json file and make it available to the rest of the script
+let scenarios;
+async function getScenarios() {
+  const response = await fetch('scenarios/scenario.json');
+  scenarios_json = await response.json();
+  scenarios = scenarios_json.scenarios;
+}
 
+//reference to the game grid
+let gridContainer;
 // Add to script.js
 document.addEventListener("DOMContentLoaded", function() {
-  const gridContainer = document.getElementById('grid-container');
+  gridContainer = document.getElementById('grid-container');
+  getScenarios();
   initOverlayControls();
   initializeMap();
   initializeModal();
 });
 
 function initializeMap() {
-  const gridContainer = document.getElementById('grid-container');
   for (let i = 0; i < 25; i++) {
     const tile = document.createElement('div');
     tile.id = `tile${i}`;
@@ -323,7 +332,14 @@ function openTileModal(currentTile) {
   document.getElementById('tileImage').src = `game-icons/${state.icon}`;
   //set the value of the input fields in the modal to match the state of the current tile
   setModalFormValues(state);
+  
+  // if there is a scenario involved we want to add the name, options, description to the modal
+  setModalScenarioValues(currentTile);
+  
+  
+  // make the modal visible
   document.getElementById('tile-modal').style.display = 'block';
+
 }
 
 function setModalFormValues(state) {
@@ -334,6 +350,22 @@ function setModalFormValues(state) {
     form.culturallySignificant.checked = state.culturallySignificant;
     form.logable.checked = state.logable;
 }
+// check the scnario object for the current tile and if it exists set the values of the modal to match the scenario
+function setModalScenarioValues(currentTile) {
+  let currentScenario = scenarios[0]
+  console.log("set scenario", scenarios, currentScenario);
+  
+  document.getElementById('scenario-title').textContent = currentScenario.title;
+  document.getElementById('scenario-description').textContent = currentScenario.description;
+  // get the scenario options and set them to the values in currentScenario options
+  // options are in this format, #option1 .option-title, #option1 .option-description
+  currentScenario.options.forEach((option, index) => {
+    document.querySelector(`#option${index + 1} .option-title`).textContent = option.title;
+    document.querySelector(`#option${index + 1} .option-description`).textContent = option.description;
+  });
+
+}
+
 
 //return the state of a tile
 function getTileState(tile) {
@@ -362,7 +394,6 @@ function applyAttributes() {
 
 // update all tiles in the grid container to have classes that match the state of the tile
 function applyTileState() {
-  const gridContainer = document.getElementById('grid-container');
   gridContainer.childNodes.forEach(tile => {
     const state = getTileState(tile);
     const attributes = ['riparian', 'impassable', 'culturallySignificant', 'logable'];
@@ -385,7 +416,6 @@ function updateTileState(tile, form) {
 
 //when the toggle overlay button is clicked add a class to the grid container, show only the base map
 function toggleOverlay() {
-  let gridContainer = document.getElementById('grid-container');
   const overlayToggle = document.getElementById('overlay-toggle');
   gridContainer.classList.toggle('no-overlay');
   // change the text of overlay-toggle to match if the overlay is on or off
@@ -404,7 +434,6 @@ function initOverlayControls() {
 
 // get a count of all the states in each tile 
 function getTileCounts() {
-  const gridContainer = document.getElementById('grid-container');
   const tileCounts = {
     riparian: 0,
     impassable: 0,

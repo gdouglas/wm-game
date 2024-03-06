@@ -318,3 +318,42 @@ body {
     display: inline-block;
   }
 }
+
+
+/*modal scenario options*/
+/*options are in this format, #scenario-options #option1 .option-title, #option1 .option-description*/
+/*options should be shown as cards and side by side*/
+
+.scenario-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 auto;
+  max-width: 980px;
+  .option-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    max-width: min(270px, calc(25% - 5px));
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .option-card label {
+    cursor: pointer;
+    text-align: center;
+  }
+  .option-card:has(input:checked) {
+    background:red;
+  }
+  input {
+    visibility: hidden;
+    height: 0;
+  }
+}
