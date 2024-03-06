@@ -5,7 +5,7 @@ const tileState = {
   tile0: {
     name: "Tile 1",
     description: "This is tile 1",
-    icon: "noun-river.png",
+    icon: "noun-pine-forest.png",
     riparian: true,
     impassable: false,
     culturallySignificant: false,
@@ -104,7 +104,7 @@ const tileState = {
   tile11: {
     name: "Tile 12",
     description: "This is tile 12",
-    icon: "noun-pine-forest.png",
+    icon: "noun-road.png",
     riparian: false,
     impassable: false,
     culturallySignificant: false,
@@ -140,7 +140,7 @@ const tileState = {
   tile15: {
     name: "Tile 16",
     description: "This is tile 16",
-    icon: "noun-farm.png",
+    icon: "noun-pine-forest.png",
     riparian: false,
     impassable: false,
     culturallySignificant: false,
@@ -149,7 +149,7 @@ const tileState = {
   tile16: {
     name: "Tile 17",
     description: "This is tile 17",
-    icon: "noun-road.png",
+    icon: "noun-farm.png",
     riparian: false,
     impassable: false,
     culturallySignificant: false,
